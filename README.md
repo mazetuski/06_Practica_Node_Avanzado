@@ -6,7 +6,13 @@
 npm install
 ```
 
-Copy .env.dist to .env and change the variables with your values
+- Copy .env.dist to .env and change the variables with your values
+
+- You can initialize database with:
+
+```
+npm run initialize-db
+```
 
 ## Run
 

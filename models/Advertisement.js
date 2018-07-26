@@ -6,8 +6,8 @@ const advertisementSchema = mongoose.Schema({
    name: String,
    sale: Boolean,
    price: Number,
-   Photo: String,
-   Tags: [String]
+   photo: String,
+   tags: [String]
 });
 
 // Create model
