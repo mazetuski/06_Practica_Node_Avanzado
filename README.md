@@ -29,3 +29,11 @@ For run in development use:
 ```
 npm run dev
 ```
+
+## Deploy
+
+You can check code quality with 
+
+```
+npm run check-code
+```
