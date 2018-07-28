@@ -9,10 +9,23 @@ const limitDefault = 20;
 
 // Create schema
 const advertisementSchema = mongoose.Schema({
-    name: String,
-    sale: Boolean,
-    price: Number,
-    photo: String,
+    name: {
+        type: String,
+        required: true
+    },
+    sale: {
+      type: Boolean,
+      required: true
+    },
+    price: {
+        type: Number,
+        min: 0,
+        required: true
+    },
+    photo: {
+        type: String,
+        required: true
+    },
     tags: [String]
 });
 

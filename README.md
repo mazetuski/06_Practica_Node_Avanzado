@@ -37,3 +37,43 @@ You can check code quality with
 ```
 npm run check-code
 ```
+
+## Api
+
+#####Get All
+
+- Method: GET
+- Url: /apiv1/advertisements
+- Params:
+
+| Param     | Type    | Help  |
+| :-------: |:-------:| ----- |
+| Name      | String  |       |
+| Sale      | Boolean |       |
+| Price     | Number  |       |
+| Tags      | String  |  you can put many values ​​separated by a comma, ?tags=motor,lifestyle     |
+
+    
+#####Get By Id
+
+- Method: GET
+- Url: /apiv1/advertisements/:id
+- Params:
+
+| Param     | Type    |
+| :-------: |:-------:|
+| Id        | String  |
+
+#####Create Advertisement
+
+- Method: POST
+- Url: /apiv1/advertisements
+- Params:
+
+| Param     | Type    | Help  |
+| :-------: |:-------:| ----- |
+| Name      | String  |       |
+| Sale      | Boolean |       |
+| Price     | Number  |       |
+| Tags      | Array   |       |
+| Photo     | String  |       |
