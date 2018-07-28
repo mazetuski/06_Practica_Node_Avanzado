@@ -40,7 +40,7 @@ npm run check-code
 
 ## Api
 
-#####Get All
+##### Get All
 
 - Method: GET
 - Url: /apiv1/advertisements
@@ -54,7 +54,7 @@ npm run check-code
 | Tags      | String  |  you can put many values ​​separated by a comma, ?tags=motor,lifestyle     |
 
     
-#####Get By Id
+##### Get By Id
 
 - Method: GET
 - Url: /apiv1/advertisements/:id
@@ -64,7 +64,7 @@ npm run check-code
 | :-------: |:-------:|
 | Id        | String  |
 
-#####Create Advertisement
+##### Create Advertisement
 
 - Method: POST
 - Url: /apiv1/advertisements
