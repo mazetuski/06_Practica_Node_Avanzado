@@ -56,6 +56,33 @@ advertisementSchema.statics.list = (req) => {
     return query.exec();
 };
 
+/**
+ * Function for get all distinct tags
+ * @returns {Promise<Array>}
+ */
+advertisementSchema.statics.getTags = async () => {
+    let resultTags = [];
+    // create query with filter
+    const query = Advertisement.find()
+        .select('tags -_id');
+    // Get object tags
+    const tags = await query.exec();
+    // Loop all tags for get distinct
+    tags.forEach(tagObj => {
+        // loop tags array
+        tagObj.tags.forEach(tag => {
+            // check if exists
+            if (resultTags.find(elem => elem === tag)) {
+                return;
+            }
+            // if not add it
+            resultTags = [...resultTags, tag];
+        });
+    });
+
+    return resultTags;
+};
+
 
 // Create model
 const Advertisement = mongoose.model('Advertisement', advertisementSchema);

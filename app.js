@@ -7,6 +7,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const apiAdRouter = require('./routes/apiv1/advertisements');
+const apiTagRouter = require('./routes/apiv1/tags');
 
 const app = express();
 
@@ -32,6 +33,7 @@ require('./models/Advertisement');
 app.use('/', indexRouter);
 // Api
 app.use('/apiv1/advertisements', apiAdRouter);
+app.use('/apiv1/tags', apiTagRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

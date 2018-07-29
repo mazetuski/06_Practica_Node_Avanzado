@@ -77,3 +77,8 @@ npm run check-code
 | Price     | Number  |
 | Tags      | Array   |
 | Photo     | String  |
+
+#### Get all tags
+
+- Method: GET
+- Url: /apiv1/tags
