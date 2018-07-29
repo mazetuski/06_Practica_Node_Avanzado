@@ -83,6 +83,14 @@ advertisementSchema.statics.getTags = async () => {
     return resultTags;
 };
 
+/**
+ * Function for get String from sale variable
+ * @returns {string}
+ */
+advertisementSchema.methods.getSaleString = function () {
+  return this.sale ? "En Venta" : "Se Busca";
+};
+
 
 // Create model
 const Advertisement = mongoose.model('Advertisement', advertisementSchema);

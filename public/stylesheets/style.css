@@ -6,3 +6,80 @@ body {
 a {
   color: #00B7FF;
 }
+
+main{
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+img{
+  max-width: 100%;
+}
+
+.advert-wrapper {
+  flex: 0 0 95%;
+  box-shadow: 0 5px 8px darkgray;
+  border-radius: 5px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.advert-wrapper > div {
+  padding: 2rem;
+}
+
+.advert-wrapper hr{
+  border: .7px solid rgba(189, 189, 189, 0.68);
+  margin-top: 2rem;
+}
+
+.advert-wrapper img{
+  border-radius: 5px 5px 0 0;
+  height: 350px;
+  object-fit: cover;
+}
+
+.advert-wrapper h3, .advert-wrapper h4{
+  text-align: center;
+}
+
+.advert-wrapper h4{
+  font-size: 1.5rem
+}
+
+.advert-wrapper h3{
+  font-size: 1.7rem
+}
+
+.advert-wrapper ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.advert-wrapper ul > li {
+  flex: 0 0 50%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .advert-wrapper{
+    flex: 0 0 48%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .advert-wrapper{
+    flex: 0 0 30%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .advert-wrapper{
+    flex: 0 0 24%;
+  }
+}
