@@ -51,7 +51,11 @@ npm run check-code
 | Name      | String  |       |
 | Sale      | Boolean |       |
 | Price     | Number  |       |
-| Tags      | String  |  you can put many values ​​separated by a comma, ?tags=motor,lifestyle     |
+| Limit     | Number  |  To limit the number of advertisements that will appear, ?limit=2    |
+| Skip      | Number  |  To skip a number of advertisements, ?skip=1     |
+| Fields    | String  |  Put fields name for get a json only with these fields separated by spaces, ?fields=name tags      |
+| Sort      | String  |  Put fields name for sort by it separated by spaces, ?sort=name      |
+| Tags      | String  |  You can put many values ​​separated by a comma, ?tags=motor,lifestyle     |
 
     
 #### Get By Id
