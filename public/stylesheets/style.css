@@ -1,85 +1,109 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body > h1{
+    font-size: 2.3rem;
+}
+
+body > h2{
+    font-size: 1.7rem;
+    font-style: italic;
+}
+
+body > h1, body > h2{
+    text-align: center;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
 
-main{
-  margin-top: 4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+main {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-img{
-  max-width: 100%;
+img {
+    max-width: 100%;
 }
 
 .advert-wrapper {
-  flex: 0 0 95%;
-  box-shadow: 0 5px 8px darkgray;
-  border-radius: 5px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+    flex: 0 0 95%;
+    box-shadow: 0 5px 8px darkgray;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .advert-wrapper > div {
-  padding: 2rem;
+    padding: 2rem;
 }
 
-.advert-wrapper hr{
-  border: .7px solid rgba(189, 189, 189, 0.68);
-  margin-top: 2rem;
+.advert-wrapper hr {
+    border: .7px solid rgba(189, 189, 189, 0.68);
+    margin-top: 2rem;
 }
 
-.advert-wrapper img{
-  border-radius: 5px 5px 0 0;
-  height: 350px;
-  object-fit: cover;
+.advert-wrapper img {
+    border-radius: 5px 5px 0 0;
+    height: 350px;
+    object-fit: cover;
 }
 
-.advert-wrapper h3, .advert-wrapper h4{
-  text-align: center;
+.advert-wrapper h3, .advert-wrapper h4 {
+    text-align: center;
 }
 
-.advert-wrapper h4{
-  font-size: 1.5rem
+.advert-wrapper h3 {
+    font-size: 1.7rem
 }
 
-.advert-wrapper h3{
-  font-size: 1.7rem
+.advert-wrapper h4 {
+    font-size: 1.5rem
+}
+
+.advert-wrapper h5{
+    font-size: 1.2rem
 }
 
 .advert-wrapper ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0;
+    list-style: none;
+    justify-content: space-around;
+    padding: 0;
 }
 
 .advert-wrapper ul > li {
-  flex: 0 0 50%;
-  text-align: center;
+    flex: 0 0 50%;
+    text-align: center;
+}
+
+.flex-wrapper, .advert-wrapper ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-wrapper {
+    justify-content: space-between;
 }
 
 @media only screen and (min-width: 600px) {
-  .advert-wrapper{
-    flex: 0 0 48%;
-  }
+    .advert-wrapper {
+        flex: 0 0 48%;
+    }
 }
 
 @media only screen and (min-width: 900px) {
-  .advert-wrapper{
-    flex: 0 0 30%;
-  }
+    .advert-wrapper {
+        flex: 0 0 30%;
+    }
 }
 
 @media only screen and (min-width: 1300px) {
-  .advert-wrapper{
-    flex: 0 0 24%;
-  }
+    .advert-wrapper {
+        flex: 0 0 24%;
+    }
 }

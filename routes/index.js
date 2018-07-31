@@ -6,7 +6,7 @@ const router = express.Router();
 const Advertisement = require('../models/Advertisement');
 
 /* GET home page. */
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
         // Get advertisements
         const advertisements = await Advertisement.list(req);

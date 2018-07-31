@@ -11,7 +11,7 @@ const limitDefault = 20;
 const advertisementSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     sale: {
       type: Boolean,
@@ -26,8 +26,14 @@ const advertisementSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    tags: [String]
+    tags: {
+        type: [String],
+        enum: ['work', 'lifestyle', 'motor', 'mobile']
+    }
 });
+
+// Create indexes
+advertisementSchema.index({ name: 1, sale: 1 });
 
 /**
  * Static function for find Advertisements with filters by request
@@ -90,7 +96,6 @@ advertisementSchema.statics.getTags = async () => {
 advertisementSchema.methods.getSaleString = function () {
   return this.sale ? "En Venta" : "Se Busca";
 };
-
 
 // Create model
 const Advertisement = mongoose.model('Advertisement', advertisementSchema);

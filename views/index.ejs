@@ -9,8 +9,8 @@
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
-<h1>Nodepop</h1>
-<p>Welcome to Nodepop</p>
+<h1>NodePop</h1>
+<h2>Miguel Ángel Zamora Blanco</h2>
 <main>
     <!-- LOOP all advertisements-->
     <% advertisements.forEach(advertisement => { %>
@@ -18,8 +18,10 @@
         <img src="/images/<%= advertisement.photo %>" alt="<%= advertisement.name %>">
         <div>
             <h3><%= advertisement.name %></h3>
-            <p><%= advertisement.getSaleString() %></p>
-            <p><%= advertisement.price %></p>
+            <div class="flex-wrapper between">
+                <h5><%= advertisement.getSaleString() %></h5>
+                <h5><%= advertisement.price %> €</h5>
+            </div>
             <!--LOOP TAGS-->
             <hr/>
             <h4>Tags</h4>
