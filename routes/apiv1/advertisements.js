@@ -4,7 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const Multer = require('multer');
-const upload = new Multer();
+const upload = new Multer({dest: 'public/images'});
 const Advertisement = require('../../models/Advertisement');
 const createError = require('http-errors');
 
@@ -45,9 +45,14 @@ router.get('/:id', async (req, res, next) => {
  * POST /
  * Create one advertisement
  */
-router.post('/', upload.array(), async (req, res, next) => {
+router.post('/', upload.single('photo'), async (req, res, next) => {
     try {
+        const photo = req.file;
+        if(!photo){
+            return next('Advertisement validation failed: photo: Path `photo` is required.');
+        }
         const data = req.body;
+        data.photo = photo.filename;
         // Create advertisement with post params
         const advertisement = new Advertisement(data);
         // save on database

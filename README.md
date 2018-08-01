@@ -74,13 +74,13 @@ npm run check-code
 - Url: /apiv1/advertisements
 - Params:
 
-| Param     | Type    |
-| :-------: |:-------:|
-| Name      | String  |
-| Sale      | Boolean |
-| Price     | Number  |
-| Tags      | Array   |
-| Photo     | String  |
+| Param     | Type    | Help  |
+| :-------: |:-------:|:-----:|
+| Name      | String  |       |
+| Sale      | Boolean |       |
+| Price     | Number  |       |
+| Tags      | Array   |       |
+| Photo     | File    |  Use form data with file upload  |
 
 #### Get all tags
 
