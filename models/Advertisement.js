@@ -11,7 +11,7 @@ const limitDefault = 20;
 const advertisementSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true,
+        required: true
     },
     sale: {
       type: Boolean,

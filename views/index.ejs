@@ -26,9 +26,10 @@
             <hr/>
             <h4>Tags</h4>
             <ul>
+                <% if (advertisement.tags) {%>
                 <% advertisement.tags.forEach(tag => { %>
                 <li><%= tag %></li>
-                <% }) %>
+                <% })} %>
             </ul>
         </div>
         <!--END LOOP-->
