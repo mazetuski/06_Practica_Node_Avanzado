@@ -32,7 +32,45 @@ img {
     max-width: 100%;
 }
 
-.advert-wrapper {
+/* BUTTON */
+.btn{
+    background-color: #2183cb;
+    padding: .5rem 2rem;
+    color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px darkgray;
+    border: none;
+    cursor: pointer;
+    transition: .5s background-color;
+}
+
+.btn:hover{
+    background-color: #25a7ff;
+    transition: .5s background-color;
+}
+
+/* LOGIN*/
+.login-wrapper{
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.input-field{
+    margin: 2rem;
+}
+
+.input-field label{
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.input-field input{
+    padding: .3rem;
+}
+
+/* ADVERTS */
+.advert-wrapper, .login-wrapper {
     flex: 0 0 95%;
     box-shadow: 0 5px 8px darkgray;
     border-radius: 5px;
@@ -95,15 +133,27 @@ img {
     .advert-wrapper {
         flex: 0 0 48%;
     }
+
+    .login-wrapper{
+        flex: 0 0 50%;
+    }
 }
 
 @media only screen and (min-width: 900px) {
+    .login-wrapper{
+        flex: 0 0 35%;
+    }
+
     .advert-wrapper {
         flex: 0 0 30%;
     }
 }
 
 @media only screen and (min-width: 1300px) {
+    .login-wrapper{
+        flex: 0 0 30%;
+    }
+
     .advert-wrapper {
         flex: 0 0 24%;
     }

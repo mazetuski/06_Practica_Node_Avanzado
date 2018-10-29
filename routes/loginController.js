@@ -27,7 +27,7 @@ class LoginController {
   async post(req, res, next) {
     try {
       // get user from request and check password
-      const user = await this.getUserFromRequestLogged(req);
+      const user = await sessionAuth.getUserFromRequestLogged(req);
       // if no user then render login
       if (!user) {
         res.render(namedRoutes.login, {
@@ -48,7 +48,7 @@ class LoginController {
   async postApi(req, res, next) {
     try {
       // get user from request and check password
-      const user = await this.getUserFromRequestLogged(req);
+      const user = await sessionAuth.getUserFromRequestLogged(req);
 
       // if no user then return an error
       if (!user) {
@@ -84,25 +84,6 @@ class LoginController {
       }
       res.redirect(namedRoutes.login);
     })
-  }
-
-  /**
-   * Function for get user from login request
-   * @param req
-   * @returns {Promise<*>}
-   */
-  async getUserFromRequestLogged(req) {
-    // get email and password
-    const email = req.body.email;
-    const password = req.body.password;
-
-    // get user from database with this email
-    const user = User.findOne({email: email});
-    // check user exists and password is valid
-    if (!user || await !bcrypt.compare(password, user.password)) {
-      return false;
-    }
-    return user;
   }
 }
 

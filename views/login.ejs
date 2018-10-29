@@ -1,6 +1,21 @@
 <% include head.html %>
 
 <body>
-    <% include header.html %>
-
+<% include header.html %>
+<main>
+    <div class="login-wrapper">
+        <h1>Login</h1>
+        <form method="post">
+            <div class="input-field">
+                <label for="email">Email</label>
+                <input type="text" name="email">
+            </div>
+            <div class="input-field">
+                <label for="password">Password</label>
+                <input type="password" name="password">
+            </div>
+            <button type="submit" class="btn">SIGN IN</button>
+        </form>
+    </div>
+</main>
 </body>
