@@ -7,6 +7,9 @@ const Multer = require('multer');
 const upload = new Multer({dest: 'public/images'});
 const Advertisement = require('../../models/Advertisement');
 const createError = require('http-errors');
+const jwtAuth = require('../../lib/jwtAuth');
+
+router.use(jwtAuth());
 
 /**
  * GET /

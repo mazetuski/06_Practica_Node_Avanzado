@@ -3,6 +3,9 @@
 const express = require('express');
 const router = express.Router();
 const Advertisement = require('../../models/Advertisement');
+const jwtAuth = require('../../lib/jwtAuth');
+
+router.use(jwtAuth());
 
 /**
  * GET /tags
