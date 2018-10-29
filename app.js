@@ -4,10 +4,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
-const indexRouter = require('./routes/index');
-const apiAdRouter = require('./routes/apiv1/advertisements');
-const apiTagRouter = require('./routes/apiv1/tags');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 const app = express();
 
@@ -29,11 +27,27 @@ require('./lib/connectMongoose');
 // Import models
 require('./models/Advertisement');
 
-// Routes
-app.use('/', indexRouter);
-// Api
-app.use('/apiv1/advertisements', apiAdRouter);
-app.use('/apiv1/tags', apiTagRouter);
+// Use session
+app.use(session({
+  name: "session-practica-6-Miguel-Zamora",
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {maxAge: 1000 * 60 * 60 * 24, httpOnly: true},
+  store: new MongoStore({
+    // conectar a la base de datos para guardar la session allí
+    url: process.env.DB_URL
+  })
+}));
+
+// helper middleware for get if user is auth
+app.use((req, res, next) => {
+  res.locals.isLogged = require('./lib/sessionAuth').isLogged(req);
+  next();
+});
+
+// Import router
+require('./router')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
