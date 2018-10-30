@@ -1,6 +1,6 @@
 <% include head.html %>
 <body>
-<% include header.html %>
+<% include header.ejs %>
 <main>
     <!-- LOOP all advertisements-->
     <% advertisements.forEach(advertisement => { %>
@@ -9,7 +9,7 @@
         <div>
             <h3><%= advertisement.name %></h3>
             <div class="flex-wrapper between">
-                <h5><%= advertisement.getSaleString() %></h5>
+                <h5><%= __(advertisement.getSaleString()) %></h5>
                 <h5><%= advertisement.price %> €</h5>
             </div>
             <!--LOOP TAGS-->
@@ -18,7 +18,7 @@
             <ul>
                 <% if (advertisement.tags) {%>
                 <% advertisement.tags.forEach(tag => { %>
-                <li><%= tag %></li>
+                <li><%= __(tag) %></li>
                 <% })} %>
             </ul>
         </div>

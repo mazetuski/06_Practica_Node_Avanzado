@@ -1,0 +1,9 @@
+<header>
+    <h1>NodePop</h1>
+    <h2>Miguel Ángel Zamora Blanco</h2>
+    <div class="lang-selector">
+        <% getLocales().forEach(locale => { %>
+        <a href="/lang/<%= locale %>"><%= locale.toUpperCase() %></a>
+        <% }) %>
+    </div>
+</header>

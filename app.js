@@ -25,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 const i18n = require('./lib/i18nConfig')();
 app.use(i18n.init);
 
+app.locals.getLocales = i18n.getLocales();
+
 // Connect to database
 require('./lib/connectMongoose');
 

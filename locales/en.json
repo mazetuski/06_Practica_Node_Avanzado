@@ -1,3 +1,12 @@
 {
-	"Invalid Credentials": "Invalid Credentials"
+	"Invalid Credentials": "Invalid Credentials",
+	"Email": "Email",
+	"Password": "Password",
+	"SIGN IN": "SIGN IN",
+	"En Venta": "On Sale",
+	"Se Busca": "Wanted",
+	"lifestyle": "lifestyle",
+	"motor": "motor",
+	"mobile": "mobile",
+	"work": "work"
 }

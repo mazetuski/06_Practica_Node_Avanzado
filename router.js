@@ -12,6 +12,7 @@ class Router {
     // Api
     app.use('/apiv1/advertisements', apiAdRouter);
     app.use('/apiv1/tags', apiTagRouter);
+    app.use('/lang', require('./routes/lang'));
     // Login
     app.get(namedRoutes.login, loginController.index);
     app.post(namedRoutes.login, loginController.post);
