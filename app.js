@@ -21,6 +21,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Multilanguage configuration
+const i18n = require('./lib/i18nConfig')();
+app.use(i18n.init);
+
 // Connect to database
 require('./lib/connectMongoose');
 

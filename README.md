@@ -1,5 +1,7 @@
 # NodePop
 
+[![Inline docs](http://inch-ci.org/github/mazetuski/06_Practica_Node_Avanzado.svg?branch=master)](http://inch-ci.org/github/mazetuski/06_Practica_Node_Avanzado)
+
 ## Install
 
 ```
@@ -39,6 +41,29 @@ npm run check-code
 ```
 
 ## Api
+
+- Api need authentication for use it
+
+#### Sandbox credentials
+
+- user: user@example.com
+- password: 1234
+
+#### Api Auth
+
+- Url: /apiv1/login
+- Params:
+
+| Param     | Type    | Help  |
+| :-------: |:-------:| ----- |
+| Email     | String  |  Email of the user for authentication  |
+| Password  | String  |  Password of the user for authentication |
+
+- This will return a **JWT token**
+
+## All the endpoints below need a token as a parameter to be used
+
+- token: String
 
 #### Get All
 

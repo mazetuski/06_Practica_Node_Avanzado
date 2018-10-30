@@ -6,9 +6,10 @@
     <div class="login-wrapper">
         <h1>Login</h1>
         <form method="post">
+            <p class="error"><%= error %></p>
             <div class="input-field">
                 <label for="email">Email</label>
-                <input type="text" name="email">
+                <input type="text" name="email" value="<%= email %>">
             </div>
             <div class="input-field">
                 <label for="password">Password</label>

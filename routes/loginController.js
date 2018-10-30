@@ -30,9 +30,9 @@ class LoginController {
       const user = await sessionAuth.getUserFromRequestLogged(req);
       // if no user then render login
       if (!user) {
-        res.render(namedRoutes.login, {
-          email: req.body.email,
-          error: res._('Invalid Credentials')
+        res.render('login', {
+          'email': req.body.email,
+          'error': res.__('Invalid Credentials')
         });
         return;
       }
@@ -52,7 +52,7 @@ class LoginController {
 
       // if no user then return an error
       if (!user) {
-        res.json({'success': false, error: res.__('Invalid credentials')});
+        res.json({'success': false, 'error': res.__('Invalid credentials')});
         return;
       }
 
