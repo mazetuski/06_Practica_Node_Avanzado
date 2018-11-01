@@ -4,15 +4,17 @@
 const cote = require('cote');
 const responder = new cote.Responder({name: 'Thumbnail Service'});
 const sharp = require('sharp');
+const path = require('path');
 
 /**
  * Listener for resize images
  */
 responder.on('thumbnail', async (req, cb) => {
   console.log(`Thumbnail petition for image ${req.image}`);
-  const imagePath = `../public/images/${req.image}`;
+  const publicImagesPath = path.join(__dirname, '..', 'public', 'images');
+  const imagePath = `${publicImagesPath}/${req.image}`;
   const thumbnailName = `thumbnail-${req.image}`;
-  const thumbnailPath = `../public/images/${thumbnailName}`;
+  const thumbnailPath = `${publicImagesPath}/${thumbnailName}`;
   // round svg for apply a overlay
   const rounded = Buffer.from(
       `<svg><rect x="0" y="0" width="${req.sizeX}" height="${req.sizeY}" rx="50" ry="50"/></svg>`
@@ -28,6 +30,7 @@ responder.on('thumbnail', async (req, cb) => {
         return cb(thumbnailName);
       })
       .catch(err => {
-        throw new Error(err.message);
+        console.log(err);
+        return cb(null);
       });
 });

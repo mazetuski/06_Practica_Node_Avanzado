@@ -10,7 +10,10 @@ const jwtAuth = require('../../lib/jwtAuth');
 const cote = require('cote');
 const requester = new cote.Requester({name: 'Thumbnail client'});
 
+// middleware for get photo image and form data
 router.use(upload.single('photo'));
+
+// middleware for auth all petitions on this api
 router.use(jwtAuth());
 
 /**
@@ -65,7 +68,11 @@ router.post('/', async (req, res, next) => {
       sizeX: 100,
       sizeY: 100
     }, async result => {
-      data.thumbnail = await result;
+      const response = await result;
+      if(!response){
+        return res.json({ success: false, error: 'Error on thumbnail' })
+      }
+      data.thumbnail = response;
       // Create advertisement with post params
       const advertisement = new Advertisement(data);
       // save on database
@@ -74,7 +81,7 @@ router.post('/', async (req, res, next) => {
       res.json({success: true, data: adResponse});
     });
   } catch (err) {
-    return next(err);
+    next(err);
   }
 });
 

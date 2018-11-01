@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "cross-env DEBUG=nodepop:* nodemon",
+    "start": "npm run thumbnail & node ./bin/www",
+    "dev": "npm run thumbnail-dev & cross-env DEBUG=nodepop:* nodemon",
     "initialize-db": "cross-env node ./lib/install_bd",
-    "check-code": "cross-env ./node_modules/.bin/eslint ."
+    "check-code": "cross-env ./node_modules/.bin/eslint .",
+    "thumbnail-dev": "cross-env nodemon services/thumbnailService",
+    "thumbnail": "cross-env node services/thumbnailService"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
