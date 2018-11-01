@@ -3,12 +3,14 @@
 // Dependencies
 const express = require('express');
 const router = express.Router();
-const Multer = require('multer');
-const upload = new Multer({dest: 'public/images'});
+const upload = require('../../lib/uploadConfig');
 const Advertisement = require('../../models/Advertisement');
 const createError = require('http-errors');
 const jwtAuth = require('../../lib/jwtAuth');
+const cote = require('cote');
+const requester = new cote.Requester({name: 'Thumbnail client'});
 
+router.use(upload.single('photo'));
 router.use(jwtAuth());
 
 /**
@@ -48,27 +50,33 @@ router.get('/:id', async (req, res, next) => {
  * POST /
  * Create one advertisement
  */
-router.post('/', upload.single('photo'), async (req, res, next) => {
-    try {
-        const photo = req.file;
-        if(!photo){
-            return next('Advertisement validation failed: photo: Path `photo` is required.');
-        }
-        const data = req.body;
-        data.photo = photo.filename;
-        // Create advertisement with post params
-        const advertisement = new Advertisement(data);
-        // save on database
-        const adResponse = await advertisement.save();
-        // return data
-        res.json({success: true, data: adResponse});
-    } catch (err) {
-        return next(err);
+router.post('/', async (req, res, next) => {
+  try {
+    const photo = req.file;
+    if (!photo) {
+      return next('Advertisement validation failed: photo: Path `photo` is required.');
     }
+    const data = req.body;
+    data.photo = photo.filename;
+
+    requester.send({
+      type: 'thumbnail',
+      image: photo.filename,
+      sizeX: 100,
+      sizeY: 100
+    }, async result => {
+      data.thumbnail = await result;
+      // Create advertisement with post params
+      const advertisement = new Advertisement(data);
+      // save on database
+      const adResponse = await advertisement.save();
+      // return data
+      res.json({success: true, data: adResponse});
+    });
+  } catch (err) {
+    return next(err);
+  }
 });
-
-
-
 
 // export router
 module.exports = router;

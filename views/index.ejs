@@ -4,10 +4,17 @@
 <main>
     <!-- LOOP all advertisements-->
     <% advertisements.forEach(advertisement => { %>
-    <div class="advert-wrapper">
+    <div class="box-wrapper">
         <img src="/images/<%= advertisement.photo %>" alt="<%= advertisement.name %>">
         <div>
-            <h3><%= advertisement.name %></h3>
+            <div class="title flex-wrapper between">
+                <h3><%= advertisement.name %></h3>
+                <div class="flex-wrapper center">
+                <% if (advertisement.thumbnail) {%>
+                    <span>Thumbnail</span> <img class="thumbnail" src="/images/<%= advertisement.thumbnail %>" alt="<%= advertisement.name %>">
+                <% } %>
+                </div>
+            </div>
             <div class="flex-wrapper between">
                 <h5><%= __(advertisement.getSaleString()) %></h5>
                 <h5><%= advertisement.price %> €</h5>

@@ -93,7 +93,7 @@ header h1{
 }
 
 /* ADVERTS */
-.advert-wrapper, .login-wrapper {
+.box-wrapper, .login-wrapper {
     flex: 0 0 95%;
     box-shadow: 0 5px 8px darkgray;
     border-radius: 5px;
@@ -101,59 +101,70 @@ header h1{
     margin-bottom: 2rem;
 }
 
-.advert-wrapper > div {
+.box-wrapper > div {
     padding: 2rem;
 }
 
-.advert-wrapper hr {
+.box-wrapper hr {
     border: .7px solid rgba(189, 189, 189, 0.68);
     margin-top: 2rem;
 }
 
-.advert-wrapper img {
+.box-wrapper img {
     border-radius: 5px 5px 0 0;
     height: 350px;
     object-fit: cover;
 }
 
-.advert-wrapper h3, .advert-wrapper h4 {
+.box-wrapper .thumbnail {
+    max-width: 50px;
+    max-height: 50px;
+    margin: 0 1rem;
+}
+
+.box-wrapper h3, .box-wrapper h4 {
     text-align: center;
 }
 
-.advert-wrapper h3 {
+.box-wrapper h3 {
     font-size: 1.7rem
 }
 
-.advert-wrapper h4 {
+.box-wrapper h4 {
     font-size: 1.5rem
 }
 
-.advert-wrapper h5{
+.box-wrapper h5{
     font-size: 1.2rem
 }
 
-.advert-wrapper ul {
+.box-wrapper ul {
     list-style: none;
     justify-content: space-around;
     padding: 0;
 }
 
-.advert-wrapper ul > li {
+.box-wrapper ul > li {
     flex: 0 0 50%;
     text-align: center;
 }
 
-.flex-wrapper, .advert-wrapper ul {
+.flex-wrapper, .box-wrapper ul {
     display: flex;
     flex-wrap: wrap;
 }
 
-.flex-wrapper {
+.between {
     justify-content: space-between;
 }
 
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (min-width: 600px) {
-    .advert-wrapper {
+    .box-wrapper {
         flex: 0 0 48%;
     }
 
@@ -167,7 +178,7 @@ header h1{
         flex: 0 0 35%;
     }
 
-    .advert-wrapper {
+    .box-wrapper {
         flex: 0 0 30%;
     }
 }
@@ -177,7 +188,7 @@ header h1{
         flex: 0 0 30%;
     }
 
-    .advert-wrapper {
+    .box-wrapper {
         flex: 0 0 24%;
     }
 }
