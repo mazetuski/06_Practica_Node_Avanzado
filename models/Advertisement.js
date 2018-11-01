@@ -28,7 +28,7 @@ const advertisementSchema = mongoose.Schema({
   },
   thumbnail: {
     type: String,
-    required: false
+    required: true
   },
   tags: {
     type: [String],
