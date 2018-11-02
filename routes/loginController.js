@@ -2,8 +2,6 @@
 
 // Dependencies
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
 const namedRoutes = require('../lib/namedRoutes');
 const sessionAuth = require('../lib/sessionAuth');
 
@@ -40,6 +38,7 @@ class LoginController {
       req.session.user = {_id: user.id};
       res.redirect(namedRoutes.home);
     }catch (err) {
+      console.log(err);
       next(err);
     }
   }

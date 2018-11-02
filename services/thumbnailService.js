@@ -23,6 +23,7 @@ responder.on('thumbnail', async (req, cb) => {
   // resize img
   await sharp(imagePath)
       .resize(req.sizeX, req.sizeY)
+      .overlayWith(rounded, { cutout: true })
       .toFile(thumbnailPath)
       .then(() => {
         // send thumbnail to requester

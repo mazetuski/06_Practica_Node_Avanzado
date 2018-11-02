@@ -63,7 +63,11 @@ npm run check-code
 
 ## All the endpoints below need a token as a parameter to be used
 
+You can put in body as:
 - token: String
+
+Or in header as:
+- x-access-token: String
 
 #### Get All
 

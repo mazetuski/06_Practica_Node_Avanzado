@@ -10,9 +10,6 @@ const jwtAuth = require('../../lib/jwtAuth');
 const cote = require('cote');
 const requester = new cote.Requester({name: 'Thumbnail client'});
 
-// middleware for get photo image and form data
-router.use(upload.single('photo'));
-
 // middleware for auth all petitions on this api
 router.use(jwtAuth());
 
@@ -53,7 +50,7 @@ router.get('/:id', async (req, res, next) => {
  * POST /
  * Create one advertisement
  */
-router.post('/', async (req, res, next) => {
+router.post('/', upload.single('photo'), async (req, res, next) => {
   try {
     const photo = req.file;
     if (!photo) {
