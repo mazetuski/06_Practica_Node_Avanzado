@@ -8,9 +8,13 @@
 npm install
 ```
 
+## Configuration file
+
 - Copy .env.dist to .env and change the variables with your values
 
-- You can initialize database with:
+## Initialize db
+
+- You need to initialize database with:
 
 ```
 npm run initialize-db
