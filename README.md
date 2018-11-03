@@ -40,6 +40,14 @@ You can check code quality with
 npm run check-code
 ```
 
+## Tests
+
+You can check all tests with 
+
+```
+npm run test
+```
+
 ## Api
 
 - Api need authentication for use it
@@ -63,11 +71,8 @@ npm run check-code
 
 ## All the endpoints below need a token as a parameter to be used
 
-You can put in body as:
+You can put in body or header as:
 - token: String
-
-Or in header as:
-- x-access-token: String
 
 #### Get All
 

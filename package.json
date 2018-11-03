@@ -9,7 +9,7 @@
     "check-code": "cross-env ./node_modules/.bin/eslint .",
     "thumbnail-dev": "cross-env nodemon services/thumbnailService",
     "thumbnail": "cross-env node services/thumbnailService",
-    "test": "node_modules/mocha/bin/mocha **/*.e2e.js"
+    "test": "NODE_ENV=test node_modules/mocha/bin/mocha **/*.e2e.js"
   },
   "dependencies": {
     "assert": "^1.4.1",
