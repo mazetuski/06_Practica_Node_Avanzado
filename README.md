@@ -4,9 +4,9 @@
 
 ## AWS 
 
-Url: [13.59.71.86](13.59.71.86)
+Url: [13.59.71.86](http://13.59.71.86)
 
-Dns: [ec2-13-59-71-86.us-east-2.compute.amazonaws.com](ec2-13-59-71-86.us-east-2.compute.amazonaws.com)
+Dns: [ec2-13-59-71-86.us-east-2.compute.amazonaws.com](http://ec2-13-59-71-86.us-east-2.compute.amazonaws.com)
 
 ## Install
 
