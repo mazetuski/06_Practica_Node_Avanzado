@@ -2,6 +2,12 @@
 
 [![Inline docs](http://inch-ci.org/github/mazetuski/06_Practica_Node_Avanzado.svg?branch=master)](http://inch-ci.org/github/mazetuski/06_Practica_Node_Avanzado)
 
+## AWS 
+
+Url: [13.59.71.86](13.59.71.86)
+
+Dns: [ec2-13-59-71-86.us-east-2.compute.amazonaws.com](ec2-13-59-71-86.us-east-2.compute.amazonaws.com)
+
 ## Install
 
 ```
